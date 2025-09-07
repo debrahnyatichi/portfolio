@@ -1,0 +1,37 @@
+<section id="about" class="py-20 bg-card relative overflow-hidden">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12">
+      <span class="text-white font-bold">About Me</span>
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Image -->
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-primary opacity-20 blur-3xl"></div>
+        <img src="{{ url_for('static', filename='images/BackgroundImage.jfif') }}"
+             alt="About Me"
+             class="w-100 h-800 object-cover mt-30 mb-15">
+      </div>
+
+      <!-- Text -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-semibold text-primary">Who I Am</h3>
+        <p class="text-lg text-foreground/80 leading-relaxed">
+          I am <strong>Deborah Nyatichi Binyanya</strong>, an Information Security Engineer
+          and Forensics Analyst passionate about protecting digital assets, investigating
+          security incidents, and building secure systems.
+        </p>
+        <p class="text-lg text-foreground/80 leading-relaxed">
+          With experience in <strong>penetration testing, network forensics, and incident response</strong>,
+          I thrive on solving complex cybersecurity challenges. My mission is to help organizations
+          secure their infrastructure while staying ahead of evolving threats.
+        </p>
+        <div>
+          <a href="#skills" class="inline-block px-6 py-3 bg-gradient-primary text-white rounded-lg shadow hover:shadow-lg">
+            Explore My Skills
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

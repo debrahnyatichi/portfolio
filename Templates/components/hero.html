@@ -1,0 +1,38 @@
+<section id="home" class="min-h-screen flex items-center justify-center bg-gradient-dark relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-cyber opacity-50"></div>
+  <div class="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+    <div class="mb-8 relative inline-block mt-16"> <!-- added mt-16 to push photo down -->
+      <div class="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-lg ring-4 ring-primary/30">
+        <img src="{{ url_for('static', filename='images/profile-image.jfif') }}"
+             alt="Professional headshot"
+             class="w-48 h-48 object-cover rounded-full mx-auto">
+      </div>
+    </div>
+    <h1 class="text-5xl md:text-7xl font-bold mb-4">
+      <span class="text-foreground/90">Deborah Nyatichi</span><br>
+      <span class="text-foreground/90">Binyanya</span>
+    </h1>
+
+    <h2 class="text-xl md:text-2xl font-bold text-blue-500 mb-6">
+      Information Security Engineer & Forensics Analyst
+    </h2>
+
+    <p class="text-lg text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+      Protecting systems, analyzing threats, and securing digital frontiers with cutting-edge
+      cybersecurity expertise.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+      <a href="https://github.com/debrahnyatichi" target="_blank" class="px-6 py-3 bg-gradient-primary rounded-lg shadow hover:shadow-cyber text-white">
+  View My Work </a>
+      <a href="#contact" class="px-6 py-3 border border-primary rounded-lg hover:border-primary">Get In Touch</a>
+    </div>
+
+    <a href="#about" class="text-primary hover:text-primary-glow transition animate-bounce">
+      ↓
+    </a>
+  </div>
+</section>

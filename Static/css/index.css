@@ -1,0 +1,94 @@
+/* ==========================
+   Dark Cybersecurity Theme
+   ========================== */
+
+/* Color variables */
+:root {
+  --background: #0a0c10;   /* dark background */
+  --foreground: #ffffff;   /* white text */
+  --card: #161b22;         /* card panels */
+  --border: #2d333b;       /* borders */
+  --primary: #00f5d4;      /* neon teal */
+  --primary-dark: #00cba9; /* darker teal */
+  --accent: #ff4d6d;       /* neon pink */
+  --accent-dark: #e63946;  /* darker pink */
+}
+
+/* Base body */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Ensure all text defaults to white */
+p, span, li, a, input, textarea, label {
+  color: var(--foreground);
+}
+
+/* Headings bold + white */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--foreground);
+  font-weight: 700; /* bold */
+}
+
+/* Section spacing */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-dark {
+  background: radial-gradient(circle at top left, #0a0c10, #161b22 70%);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+}
+
+.bg-gradient-cyber {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+}
+
+/* Glow effects */
+.text-primary-glow {
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(0, 245, 212, 0.8),
+               0 0 20px rgba(0, 245, 212, 0.6);
+}
+
+.text-accent-glow {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(255, 77, 109, 0.8),
+               0 0 20px rgba(255, 77, 109, 0.6);
+}
+
+/* Cards */
+.bg-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.bg-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 245, 212, 0.15);
+}
+
+/* Links */
+a {
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+a:hover {
+  color: var(--primary);
+}
+
+/* Buttons */
+button, .btn {
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: var(--foreground);
+}
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+}
