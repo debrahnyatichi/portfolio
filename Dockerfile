@@ -1,36 +1,26 @@
-# Use official Python 3.12 slim image
 FROM python:3.12-slim
 
-# Set working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Install system dependencies for building wheels & your packages
+# Install build dependencies (optional but good for C extensions like bcrypt/cryptography)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    gcc \
-    libffi-dev \
-    libssl-dev \
-    libpq-dev \
-    pkg-config \
-    python3-dev \
-    python3-gi \
-    libcairo2-dev \
-    libgirepository1.0-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements file first (for Docker cache efficiency)
+# Copy requirements first (for caching layers)
 COPY requirements.txt .
 
-# Upgrade pi
-p & install dependencies
+# Upgrade pip and install dependencies
 RUN pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
-# Copy your project files
+# Copy project files
 COPY . .
 
-# Expose Flask’s default port
-EXPOSE 5000
+# Expose port Render will map
+EXPOSE 8000
 
-# Run your Flask app
-CMD ["python", "app.py"]
+# Use Gunicorn to serve Flask app
+# app:app → (file: Flask app instance)
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:app"]
